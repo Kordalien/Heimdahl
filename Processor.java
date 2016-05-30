@@ -49,6 +49,7 @@ public class Processor implements Runnable{
             String args="";
             int contentLength=0;
             int attempt=0;
+			/*
             while(attempt<aMax) {
                 args= in.readLine();
                 System.out.println(args);
@@ -62,12 +63,11 @@ public class Processor implements Runnable{
             if(contentLength>maxBytes){
                //TODO: respond if failing entry? no this isn't a real server.
             }
+			*/
 
 
-            char [] chars = new char[contentLength];
-            in.read(chars,0,contentLength);
-            args = new String(chars);
-            System.out.println(args.substring(0,100));
+            args = in.readLine();
+            System.out.println(args);
             String [] argVs = args.split(" ");
             in.close();
             out.close();
